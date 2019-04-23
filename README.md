@@ -6,4 +6,4 @@ this is my a student project
 Over there http://border-color.red
 
 ### Structure
-![Structure of project](https://github.com/via-shcherba/MyStudentProject/tree/master/img/structure.jpeg)
+![Structure of project](https://github.com/via-shcherba/MyStudentProject/blob/master/img/structure.jpg)
