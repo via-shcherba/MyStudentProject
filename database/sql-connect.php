@@ -1,6 +1,6 @@
 <?php
-	$login = 'shcher02';
-	$password = '29051983era';
+	$login = 'TOP SECRET';
+	$password = 'TOP SECRET';
 	$db = 'shcher02_db';
 			
 	define("DB_HOST", "localhost");
