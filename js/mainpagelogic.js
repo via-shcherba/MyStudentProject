@@ -1,5 +1,20 @@
 "use strict"; 
 
+/* title change */
+var titles = {
+	produktsiya: 'Продукция',
+	prays: 'Прайс',
+	usloviya: 'Условия сотрудничества',
+	onas: 'О нас',
+	mestaprodazh: 'Места продаж',
+	kontakty: 'Контакты',
+	onlaynzakaz: 'Онлайн-заказ'
+};
+if(item_menu && titles[item_menu.replace('-', '')]){
+	document.title = 'Докшицкий хлебозавод | ' + titles[item_menu.replace('-', '')];
+};
+/* end title change */
+
 var mainMenuUl = document.getElementById('menu').firstElementChild;
 
 //this is block makes a item of main menu active
