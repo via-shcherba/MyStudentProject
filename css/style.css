@@ -751,44 +751,83 @@ div.close{
   font-size: 20px;
   margin-bottom: 15px;
 }
-.content .price{
+.content .text{
   padding: 15px 20px;
   background-color: #45251C;
   color: #F5F5F6;
   position: relative;
+  border: 1px solid #B2AB9D;
 }
-.price .mobile-table{
+.text .mobile-table{
   display: none;
 }
-.price h1{
+.text h1{
   margin-bottom: 30px;
   margin-left: 13px;
 }
-.price img:nth-child(2){
+.text img:nth-child(2){
   position: absolute;
   top: 25px;
   left: 33px;
 }
-.price img:nth-child(3){
+.text img:nth-child(3){
   position: absolute;
   top: 38px;
   left: 290px;
 }
-.price table{
+.text table{
   margin: 0 auto 20px;
   border-collapse: collapse;
   font-size: 12px;
 }
-.price table th, .price table td{
+.text table th, .text table td{
   padding: 1px 3px;
   border: 1px double #DDD8C6;
 }
-.price table td:not(:nth-child(3)), .price p{
+.text table td:not(:nth-child(3)), .text p{
   text-align: center; 
 }
-.price p{
+.text p.last{
   margin-bottom: 20px;
 }
+.text .textIn{
+  margin: 0px -20px -15px 10px;
+  padding: 20px 20px 35px;
+  background-color: #B2AB9D;
+  border: 1px solid #CCC7B7;
+}
+.text .textIn ul li{
+  margin-left: 15px;
+  list-style-type: disc;
+  color: #45251C;
+}
+.text .textIn h3{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.text .textIn p{
+  text-align: left;
+  padding-bottom: 5px;
+  text-indent: 22px;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  color: #45251C;
+}
+.text .textIn span{
+  font-style: italic;
+  font-weight: bold;
+}
+.text .textIn a, .text .textIn a:visited{
+  color: #B11015;
+}
+.text .textIn img{
+  float: left;
+  width: 300px;
+  margin: 5px 10px 5px 0;
+  outline: 3px solid rgba(240,240,240,0.2);
+}
+
 /* footer */
 
 footer{
@@ -958,7 +997,7 @@ footer > img{
 	}
     header .left-stripe, header .right-stripe, .menu, footer .down-stripe,
 	footer .sub-menu, .content .pre-block img, .content .block-stores .stripe-left,
-	.content .block-stores .stripe-right, .content .carousel, .price .main-table
+	.content .block-stores .stripe-right, .content .carousel, .text .main-table
 	{
 	  display: none;
 	}
@@ -977,7 +1016,7 @@ footer > img{
 	  padding: 0; 
 	}		
 	#bmenu, #orderm, .mobile, .carousel-mobile, .content .flex-box .foto,
-	.price .mobile-table
+	.text .mobile-table
 	{
 	  display: block;
 	}
@@ -1019,10 +1058,10 @@ footer > img{
 	  padding-top: 10px;
 	  font-size: 13px;
 	}
-	.price h1{
+	.text h1{
 	  font-size: 15px;
 	}
-	.price table td:nth-child(2){
+	.text table td:nth-child(2){
       text-align: left;
 	}
 }
