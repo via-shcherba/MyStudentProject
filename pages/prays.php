@@ -1,4 +1,4 @@
-<div class="price">
+<div class="text">
 	<h1>Прайс Докшицкого хлебозавода</h1>
 	<img src="img/stripeML.png" alt="полоса"/>
 	<img src="img/spikeletML.png" alt="колосок"/>
@@ -64,5 +64,5 @@
 			?>
 		</tbody>
 	</table>
-	<p>Будем рады сотрудничеству с Вами!</p>
+	<p class="last">Будем рады сотрудничеству с Вами!</p>
 </div>
