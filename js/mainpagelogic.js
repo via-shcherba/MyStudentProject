@@ -18,19 +18,12 @@ if(item_menu && titles[item_menu.replace('-', '')]){
 var mainMenuUl = document.getElementById('menu').firstElementChild;
 
 //this is block makes a item of main menu active
-let MainMenuControl;
 for(var i=0; i<mainMenuUl.childElementCount;i++){
-	//mainMenuUl.children[i].firstElementChild.classList.remove('active');	
 	let MainMenuA = mainMenuUl.children[i].firstElementChild;
 	if(MainMenuA.getAttribute('href').split('.')[0] == item_menu){
-		MainMenuA.classList.add('active');		
-        MainMenuControl = true;		
+		MainMenuA.classList.add('active');		       
 	}	
 }
-if(!MainMenuControl){
-	//mobileMenuUl.children[0].firstElementChild.classList.add('active');	
-}
-
 
 /* mobile version */
 var mbutton = document.getElementById('bmenu');

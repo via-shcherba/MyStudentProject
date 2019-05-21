@@ -17,6 +17,12 @@ var carouselMobile = document.getElementById('carousel-mobile');
 var prodBoxM = document.getElementById('prodBoxM');
 setProdBox(all_prod[0], prodBoxM);
 
+//transition from online-order page
+if(certainProd){
+	let node = document.querySelector('[data-id="'+certainProd+'"]');
+	getsetdata(node);		
+}
+//
 list.onclick = function(e){
 	var target = e.target;		
 	while(target != list){		
@@ -127,3 +133,4 @@ carouselMobile.addEventListener('touchend', function(event) {
 		}
 	}
 }, false);
+
