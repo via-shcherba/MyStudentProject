@@ -1,3 +1,6 @@
+<?php
+	$all_prod = $db->getDataTableProduction();
+?>
 <div class="text">
 	<h1>Прайс Докшицкого хлебозавода</h1>
 	<img src="img/stripeML.png" alt="полоса"/>
@@ -17,8 +20,7 @@
 		</thead>
 		<tbody>
 			<?php
-				include 'database/getDataTableProduction.php';
-				
+			
 				for($i=0; $i<count($all_prod); $i++){
 					$full_cost = $all_prod[$i]['cost'] + ($all_prod[$i]['cost'] / 100 * $all_prod[$i]['tax']);
 					echo '<tr>
@@ -47,8 +49,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php
-				include 'database/getDataTableProduction.php';
+			<?php				
 				
 				for($i=0; $i<count($all_prod); $i++){
 					$full_cost = $all_prod[$i]['cost'] + ($all_prod[$i]['cost'] / 100 * $all_prod[$i]['tax']);

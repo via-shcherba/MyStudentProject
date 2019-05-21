@@ -30,7 +30,7 @@
 		<img class="stripe-left" src="img/vertical.png" alt="полоса-левая"/>
 		<img class="stripe-right" src="img/vertical.png" alt="полоса-правая"/>
 		<div class="foto">
-			<a href=""><img src="img/map.jpg" alt="Карта магазинов"/></a>
+			<a href="mesta-prodazh.html"><img src="img/map.jpg" alt="Карта магазинов"/></a>
 		</div>
 	</div>	
 	<div class="block-about">
@@ -43,7 +43,7 @@
 		<a href="o-nas.html" class="button">Читать</a>
 		<img class="spikelet" src="img/spikelet.png" alt="колосок"/>
 		<div class="foto">
-			<a href=""><img src="img/flag.jpg" alt="Докшицкий флаг"/></a>
+			<a href="o-nas.html"><img src="img/flag.jpg" alt="Докшицкий флаг"/></a>
 		</div>
 	</div>	
 </div>

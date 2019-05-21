@@ -1,5 +1,6 @@
 <?php
-	include 'database/getDataTableProduction.php';	
+	$all_prod = $db->getDataTableProduction();
+	shuffle($all_prod);
 	$directory_img = 'fotoprod';			
 ?>
 <!-- put data from PHP into JS -->
@@ -30,15 +31,22 @@
 			<p class="recommend"></p>
 		</div>
 	</div>
-	<div class="show">
+	<div class="show" id="show">
 		<ul class="list" id="list">
 		
 			<?php
 				foreach($all_prod as $el){
 					$rub = explode(".",$el['cost'])[0];
-					$pen = explode(".",$el['cost'])[1];  
+					$pen = explode(".",$el['cost'])[1]; 
+					//transition from online-order page	
+					$certainProd;
+					if(!empty($_GET['data-id'])){
+					    if($_GET['data-id'] == $el['id']){
+							$certainProd = $el['id'];
+						}  
+					}  
 					echo '
-					<li data-id="'.$el['id'].'">
+					<li data-id="'.$el['id'].'" id = '.$el['id'].'>
 						<img src="'.$directory_img.'/'.$el['image'].'" alt="'.explode(" ",$el['name_prod'])[0].'"/>
 						<p>'.$el['name_prod'].'</p>
 						<div class="cost">'.$rub.'р.<sup>'.$pen.'к.</sup></div>
@@ -47,7 +55,9 @@
 					';					
 				}
 			?>
-																			
+			<script>
+				var certainProd = <?php echo json_encode($certainProd); ?>;
+			</script>																
 		</ul>
 	</div>
 	<div class="clear"></div>
