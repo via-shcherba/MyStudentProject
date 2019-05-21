@@ -4,12 +4,8 @@ class db{
 	var $connect;
 	function db(){
 		$host = 's06.host-food.ru';
-		$login = 'h139830_h1398301';
-		$password = '8E9tlnfEV';
-		$db = 'h139830_bread';
-		
-		define("DB_HOST", $host);
-		define("DB_LOGIN", $login);
+		$login = 'SECRET';
+		$password = 'SECRET';
 		define("DB_PASSWORD", $password);
 		define("DATABASE", $db); 
 		
