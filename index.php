@@ -1,3 +1,14 @@
+<?php 
+	session_start();  //session	
+	
+	//button exit from online-order
+	if(!empty($_GET['exit']) && $_GET['exit'] == 'true'){
+		unset($_SESSION['access']);
+		session_destroy();
+		Header("location: /");		
+	}	
+	
+?>
 <!DOCTYPE HTML>
 <html lang="ru">	
 	<head>
@@ -10,10 +21,11 @@
 		<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 	</head>
 	<body>
-		<?php
+		<?php									
 			preg_match_all('#.*(/.+?)\.html.*$#',$_SERVER['REQUEST_URI'], $str);
 			$item_menu = substr($str[1][0], 1);
-			include 'database/sql-connect.php';
+			include 'database/db.php';	
+			$db = new db();
 		?>
 		<script>
 			var item_menu = <?php echo json_encode( $item_menu ); ?>; 
@@ -35,7 +47,7 @@
 				<p>Минское представительство</p>				
 			</div>
 			<div id="bmenu" class="icon-menu-1"></div>
-			<div id="orderm">Онлайн-заказ</div>
+			<a id="orderm" href="onlayn-zakaz.html">Онлайн-заказ</a>
 			<div class="clear"></div>
 			<div id="mobile-menu" class="mobile-menu">
 				<ul>
@@ -60,7 +72,7 @@
 					<li><a href="mesta-prodazh.html">Места продаж</a></li>
 					<li>
 						<a href="kontakty.html">Контакты</a>
-						<a href="onlayn-zakaz.html" class="order">Онлайн-заказ</a>
+						<a href="onlayn-zakaz.html" class="order" id="obutton">Онлайн-заказ</a>
 					</li>					
 				</ul>				
 			</div>
@@ -72,7 +84,7 @@
 						if(!empty($item_menu)) include 'pages/404.php';
 					}
 					if($item_menu == 'sql') include 'pages/404.php';
-					if(empty($item_menu)) include 'pages/main-page.php';
+					if(empty($item_menu)) include 'pages/main-page.php';					
 				?>				
 			</div>
 			<footer>
@@ -82,8 +94,8 @@
 					<img src="img/spikelet-right.png" alt="колосок правый"/>
 				</div>
 				<ul class="sub-menu">
-					<li><a href="">О нас</a></li>
-					<li><a href="">Контакты</a></li>
+					<li><a href="o-nas.html">О нас</a></li>
+					<li><a href="kontakty.html">Контакты</a></li>
 				</ul>
 				<div class="mobile">
 					<img src="img/spikelet-left.png" alt="колосок левый"/>
