@@ -13,4 +13,4 @@ Over there http://border-color.red
 ![Structure of project](https://github.com/via-shcherba/MyStudentProject/blob/master/img/structure.jpg)
 
 ### DataBase MySQL
-![Screen DataBase](https://github.com/via-shcherba/MyStudentProject/blob/master/img/screen database.jpg)
+![Screen DataBase](https://github.com/via-shcherba/MyStudentProject/blob/master/img/screen_database.jpg)
