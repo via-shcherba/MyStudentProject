@@ -4,7 +4,7 @@ This is my a student project
 ### DEMO VERSION
 Over there http://border-color.red
 
-**Access to personal account online order:**   
+**Access to personal account:**   
 *login:* **den**  
 *password:* **111**  
 *Test client is* **Euroopt, Denisovskaya, 8**  
