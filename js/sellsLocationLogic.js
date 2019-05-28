@@ -20,10 +20,15 @@ function initMap() {
 				marker.addListener('click', function(e) {
 					//getting address of store from marker					
 					let address = this.title.split(',')[0];
+					address = address.split(' ');
+					address = address[1] + address[2];
 					//looking for a dateaddress array 					
 					for(var j=0;j<dateaddress.length;j++){
 						//if address from marker equals address in dateaddress array - stop
-						if(dateaddress[j]['address'] == address){
+						let addressFromBase = dateaddress[j]['address'].split(' ');
+						addressFromBase = addressFromBase[1] + addressFromBase[2];
+						
+						if(addressFromBase == address){
 							infowindow.setContent(
 								"<div class='point'><p><span>Магазин:</span> "+dateaddress[j]['name']+"</p><p><span>Адрес:</span> "+dateaddress[j]['address']+"</p><p style='color:red;'><span style='color:#45251C;'>Дата поставки:</span> "+dateaddress[j]['date']+"</p></div>"
 							);

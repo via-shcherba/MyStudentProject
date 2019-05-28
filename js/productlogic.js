@@ -20,7 +20,9 @@ setProdBox(all_prod[0], prodBoxM);
 //transition from online-order page
 if(certainProd){
 	let node = document.querySelector('[data-id="'+certainProd+'"]');
-	getsetdata(node);		
+	getsetdata(node);	
+	setProdBox(getall(+node.getAttribute('data-id')), prodBoxM);
+	window.scrollBy(0, 235);
 }
 //
 list.onclick = function(e){
