@@ -2,7 +2,7 @@
 	$dateaddress = $db->getDataForSellsLocation();
 ?>
 <script>
-	var dateaddress = <?php echo json_encode( $dateaddress ); ?>; 
+	var dateaddress = <?php echo json_encode( $dateaddress ); ?>; 	
 </script>
 <div class="text">
 	<h1>Места продаж</h1>
@@ -21,5 +21,7 @@
 </div>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2moYuHUrP15MPzvQ8H7JW8KL22PSgPk4&callback=initMap">
 </script>
-
+<script>
+	if(+screen.width < 650) window.scrollBy(0, 195);
+</script>
 

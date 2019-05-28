@@ -1,18 +1,25 @@
 <?php	
-	
+	$order = null;
+	$dateOrder = null;
+	if(isset($_GET['getorder']) && !empty($_GET['getorder'])){
+		$order = $db->getOrder($_SESSION['clientId'], $_GET['getorder']);
+		$dateOrder = $_GET['getorder'];
+	}
 	if(!empty($_POST['client']) && !empty($_POST['date']) && !empty($_POST['idp']) && !empty($_POST['amountp'])){
 		$client = $_POST['client'];
 		$date = $_POST['date'];
 		$arrayIdp = $_POST['idp'];
 		$arrayAmount = $_POST['amountp'];
 		
+		$dublicate = array();
 		$dublicate = $db->searchDublicate($date);
-		if(!empty($dublicate)){
-			print_r($dublicate);
+		
+		if(!empty($dublicate)){			
+			$db->deleterows($dublicate);								 
 		}
-		
+			
 		$sendControl = $db->insertOrderIntoDb($client, $date, $arrayIdp, $arrayAmount);
-		
+				
 		if($sendControl){
 			echo("<script>location.href='/onlayn-zakaz.html?send=true'</script>");
 		}else{
@@ -48,7 +55,7 @@
 ?>
 <script>	
 	let active_item_order = <?php echo json_encode($_SESSION['access']);?>;
-	//let sendControl = <?php echo json_encode($sendControl);?>;
 	let obutton = document.getElementById('obutton');
-	if(active_item_order) obutton.classList.add('oactive'); 	
+	if(active_item_order) obutton.classList.add('oactive'); 
+	if(+screen.width < 650) window.scrollBy(0, 195);
 </script>

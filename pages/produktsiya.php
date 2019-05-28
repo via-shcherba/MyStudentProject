@@ -35,14 +35,14 @@
 		<ul class="list" id="list">
 		
 			<?php
+				$certainProd = null;
 				foreach($all_prod as $el){
 					$rub = explode(".",$el['cost'])[0];
 					$pen = explode(".",$el['cost'])[1]; 
 					//transition from online-order page	
-					$certainProd;
 					if(!empty($_GET['data-id'])){
 					    if($_GET['data-id'] == $el['id']){
-							$certainProd = $el['id'];
+							$certainProd = $el['id'];							
 						}  
 					}  
 					echo '
@@ -56,7 +56,7 @@
 				}
 			?>
 			<script>
-				var certainProd = <?php echo json_encode($certainProd); ?>;
+				var certainProd = <?php echo json_encode($certainProd); ?>;					
 			</script>																
 		</ul>
 	</div>

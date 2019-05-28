@@ -12,7 +12,7 @@
 			Телефон: <a href="tel:+375293333333">+375 29 333 33 33</a>
 		</p>
 		<p>
-			Почта: <a href="mailto:shcherbaVv@hleb.by">shcherbaVv@hleb.by</a>
+			Почта: <a>shcherbaVv@hleb.by</a>
 		</p>
 		<h3>Администрация</h3>
 		<p>
@@ -22,7 +22,7 @@
 			Телефон: <a href="tel:+375292222222">+375 29 222 22 22</a>
 		</p>
 		<p>
-			Почта: <a href="mailto:baykovAF@hleb.by">baykovAF@hleb.by</a>
+			Почта: <a>baykovAF@hleb.by</a>
 		</p>
 		<br>
 		<p>
@@ -32,7 +32,7 @@
 			Телефон: <a href="tel:+375293333333">+375 29 333 33 33</a>
 		</p>
 		<p>
-			Почта: <a href="mailto:hlebovaTP@hleb.by">hlebovaTP@hleb.by</a>
+			Почта: <a>hlebovaTP@hleb.by</a>
 		</p>
 		<br>
 		<p>
@@ -42,7 +42,7 @@
 			Телефон: <a href="tel:+375294444444">+375 29 444 44 44</a>
 		</p>
 		<p>
-			Почта: <a href="mailto:dokshucicDI@hleb.by">dokshucicDI@hleb.by</a>
+			Почта: <a>dokshucicDI@hleb.by</a>
 		</p>
 	</div>
 </div>
