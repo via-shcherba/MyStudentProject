@@ -4,8 +4,12 @@ class db{
 	var $connect;
 	function db(){
 		$host = 's06.host-food.ru';
-		$login = 'SECRET';
-		$password = 'SECRET';
+		$login = 'h139830_h1398301';
+		$password = '8E9tlnfEV';
+		$db = 'h139830_bread';
+		
+		define("DB_HOST", $host);
+		define("DB_LOGIN", $login);
 		define("DB_PASSWORD", $password);
 		define("DATABASE", $db); 
 		
@@ -29,6 +33,14 @@ class db{
 		return $all_prod;
 	}
 	
+	function getDiscont($client){
+		$query = "SELECT type_price.discont as discont FROM `clients` 
+		JOIN entity ON clients.entity_id = entity.id 
+		JOIN type_price ON type_price.id = entity.type_price_id
+		WHERE clients.id=".$client."";
+		$data = mysqli_query($this->connect, $query);
+		return mysqli_fetch_assoc($data); 
+	}
 	function getDataForSellsLocation(){
 		$query = "SELECT clients.address_unload as address, MAX(order.date_order) as date, entity_name as name, clients.location FROM `order` JOIN `clients` ON clients.id = order.id_client
 		JOIN `entity` ON entity.id = clients.entity_id
@@ -52,6 +64,15 @@ class db{
 		return $res;
 	}
 	
+	function deleterows($id){
+		$deleteControl = true;
+		for($i=0;$i<count($id);$i++){
+			$query = "DELETE FROM `order` WHERE id=".$id[$i]['id']."";
+			$res = mysqli_query($this->connect, $query);
+			if($res != 1) $deleteControl = false;
+		}
+		return $deleteControl;
+	} 
 	
 	function insertOrderIntoDb($client, $date, $arrayIdp, $arrayAmount){
 		$sendControl = true;
@@ -62,6 +83,32 @@ class db{
 			if($res != 1) $sendControl = false;
 		}
 		return $sendControl;
+	}
+	
+	function getDateOrderFor14days($client){
+		$query = "SELECT DISTINCT(date_order) AS date FROM `order` WHERE TO_DAYS(NOW()) - TO_DAYS(date_order) <= 12 AND id_client=".$client." ORDER BY date_order DESC";
+		$data = mysqli_query($this->connect, $query);
+		for($res = array(); $row = mysqli_fetch_assoc($data); $res[] = $row);
+		return $res;
+	}
+	
+	function getOrder($client, $date){
+		$query = "SELECT id_production, amount FROM `order` WHERE id_client=".$client." AND date_order='".$date."'";
+		$data = mysqli_query($this->connect, $query);
+		for($res = array(); $row = mysqli_fetch_assoc($data); $res[] = $row);
+		return $res;
+	}
+	
+	function getCostWeightTaxProd($id){
+		$query = "SELECT cost, weight, tax FROM `product` WHERE id=".$id."";
+		$data = mysqli_query($this->connect, $query);
+		return mysqli_fetch_assoc($data); 			
+	}
+
+	function getDayOfWeek($date){
+		$num = date('w',strtotime($date));
+		$arrdays = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'];
+		return $arrdays[$num];
 	}
 } 
 
