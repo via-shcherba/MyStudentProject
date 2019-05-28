@@ -23,7 +23,11 @@
 	<body>
 		<?php									
 			preg_match_all('#.*(/.+?)\.html.*$#',$_SERVER['REQUEST_URI'], $str);
-			$item_menu = substr($str[1][0], 1);
+			if(isset($str[1][0]) && !empty($str[1][0])){
+				$item_menu = substr($str[1][0], 1);
+			}else{
+				$item_menu = '';
+			}
 			include 'database/db.php';	
 			$db = new db();
 		?>
